@@ -4,7 +4,9 @@
 
 **整条片子没有一个素材文件、没有浏览器、没有一帧外部动画**：画面是 `ui` 包的原生视图（文本、盒子、真正的 Progress / Switch / Slider 控件），由 GPU 直接画进编码器的 IOSurface 再压成 H.264；声音是 Go 里现算的 48 kHz 立体声。片子里那句 `$ go run ./pv` 说的就是它自己。
 
-成片在 `renders/mygo-pv.mp4`。
+[![mygo-pv 预览：开场打光、五个切口、真实控件、片格带、音轨可视化与落版](renders/preview-pv.gif)](renders/mygo-pv.mp4)
+
+GitHub 的 README 会过滤 `<video>`，不能内嵌 MP4 播放器。上面是 16.8 秒静音 GIF 预览；[点击播放完整 45 秒成片](renders/mygo-pv.mp4)（含音轨）。
 
 ---
 
@@ -31,7 +33,7 @@ go run ./pv -progress=false                  # 不要进度条
 pv/main.go          composition：七个段落、时间线、所有元素
 sound/score.go      纯 Go 合成器：和弦、冲击、拨弦、噪声、混音与限制器
 assets/             Geist / GeistMono / Anton 三套字体（OFL）
-renders/            成片、海报帧、45 帧总览
+renders/            成片、GIF 预览、海报帧、45 帧总览
 vendor/             mygo 及依赖的源码，离线编译用
 ```
 
